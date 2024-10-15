@@ -1,0 +1,76 @@
+userName: bsuser_s1M2VS
+accessKey: rLppGAU6PNUBKEjQpyxw
+app: bs://6b37e59d1434616fbd7911cde035446b9679c4cf
+platforms:
+  - platformName: android
+    platformVersion: 12.0
+    deviceName: Samsung Galaxy S22 Ultra
+  - platformName: android
+    platformVersion: 13.0
+    deviceName: Google Pixel 7 Pro
+  - platformName: android
+    platformVersion: 11.0
+    deviceName: OnePlus 9
+buildIdentifier: ${BUILD_NUMBER}
+otherApps: ["bs://6b37e59d1434616fbd7911cde035446b9679c4cf"]
+browserstackLocal: true
+debug: true
+networkLogs: true
+appProfiling: true
+
+
+
+
+
+DesiredCapabilities capabilities = new DesiredCapabilities();
+HashMap<String, Object> bstackOptions = new HashMap<String, Object>();
+bstackOptions.put("userName", "bsuser_s1M2VS");
+bstackOptions.put("accessKey", "rLppGAU6PNUBKEjQpyxw");
+bstackOptions.put("local", "true");
+bstackOptions.put("debug", "true");
+bstackOptions.put("networkLogs", "true");
+bstackOptions.put("appProfiling", "true");
+capabilities.setCapability("platformName", "android");
+capabilities.setCapability("appium:platformVersion", "12.0");
+capabilities.setCapability("appium:deviceName", "Samsung Galaxy S22 Ultra");
+capabilities.setCapability("appium:app", "bs://6b37e59d1434616fbd7911cde035446b9679c4cf");
+capabilities.setCapability("appium:otherApps", new String[]{"bs://6b37e59d1434616fbd7911cde035446b9679c4cf"});
+capabilities.setCapability("bstack:options", bstackOptions);
+
+
+DesiredCapabilities caps = new DesiredCapabilities();
+caps.setCapability("os", "android");
+caps.setCapability("os_version", "12.0");
+caps.setCapability("device", "Samsung Galaxy S22 Ultra");
+caps.setCapability("browserstack.user", "bsuser_s1M2VS");
+caps.setCapability("browserstack.key", "rLppGAU6PNUBKEjQpyxw");
+caps.setCapability("app", "bs://6b37e59d1434616fbd7911cde035446b9679c4cf");
+caps.setCapability("otherApps", new String[]{"bs://6b37e59d1434616fbd7911cde035446b9679c4cf"});
+caps.setCapability("browserstack.local", "true");
+caps.setCapability("browserstack.debug", "true");
+caps.setCapability("browserstack.networkLogs", "true");
+caps.setCapability("appProfiling", "true");
+
+
+
+// start a remote browser with the desired capabilities
+RemoteWebDriver driver = new RemoteWebDriver(new URL(URL), caps);
+
+// ... run some tests
+
+// get the session ID
+driver.getSessionId();
+
+// performing actions using the session ID
+
+// ... continue with your tests
+
+
+curl -u "bsuser_s1M2VS:rLppGAU6PNUBKEjQpyxw" https://api.browserstack.com/app-automate/projects.json
+
+curl -u "bsuser_s1M2VS:rLppGAU6PNUBKEjQpyxw" https://api.browserstack.com/app-automate/projects/<project-id>/badge_key
+
+curl -u "bsuser_s1M2VS:rLppGAU6PNUBKEjQpyxw" \
+-X POST "https://api-cloud.browserstack.com/app-automate/upload" \
+-F "url=<download_url>"
+
